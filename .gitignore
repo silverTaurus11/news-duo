@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# Xcode
+xcuserdata/
+*.xcuserstate
+DerivedData/
+build/
+.build/
+
+# Local secrets: copy Secrets.example.plist to news-duo/Secrets.plist
+news-duo/Secrets.plist
