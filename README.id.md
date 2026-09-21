@@ -12,13 +12,39 @@ Aplikasi berita SwiftUI untuk **iPhone Duo** (juga berjalan di iPhone biasa dan 
 
 **Isi dokumen ini**
 
-1. [Mulai cepat](#mulai-cepat)
-2. [Bagaimana app membedakan mode Duo dan single screen](#bagaimana-app-membedakan-mode-duo-dan-single-screen)
-3. [Panduan mengembangkan untuk iPhone Duo](#panduan-mengembangkan-untuk-iphone-duo)
-4. [Fitur dan cara kerjanya](#fitur-dan-cara-kerjanya)
-5. [Arsitektur, batasan NewsAPI, dan test](#arsitektur)
+1. [Demo](#demo)
+2. [Mulai cepat](#mulai-cepat)
+3. [Bagaimana app membedakan mode Duo dan single screen](#bagaimana-app-membedakan-mode-duo-dan-single-screen)
+4. [Panduan mengembangkan untuk iPhone Duo](#panduan-mengembangkan-untuk-iphone-duo)
+5. [Fitur dan cara kerjanya](#fitur-dan-cara-kerjanya)
+6. [Arsitektur, batasan NewsAPI, dan test](#arsitektur)
 
 Dokumen lain: [docs/STRATEGY.md](docs/STRATEGY.md) berisi alasan di balik keputusan arsitektur.
+
+---
+
+## Demo
+
+![Briefly di layar luar simulator iPhone Duo: telusuri, buka, simpan, dan pilih negara](docs/demo/demo-duo-outer.gif)
+
+*Layar luar simulator iPhone Duo: Top Headlines → buka artikel → simpan (❤︎) → kembali ke daftar → tab Saved → picker negara. Bar vertikal di kanan memuat tab bar dan toolbar.*
+
+![Satu hierarki view di tiga layar: layar luar Duo, iPad, iPhone](docs/demo/overview.png)
+
+| Layar luar Duo: headlines | Layar luar Duo: artikel | Layar luar Duo: picker negara |
+|:---:|:---:|:---:|
+| ![Headlines di layar luar Duo](docs/demo/duo-outer-headlines.png) | ![Artikel di layar luar Duo](docs/demo/duo-outer-detail.png) | ![Picker negara di layar luar Duo](docs/demo/duo-outer-country.png) |
+
+| iPad Pro 13": dua pane | iPad Pro 13": search + sort | iPhone: satu layar |
+|:---:|:---:|:---:|
+| ![List dan detail dua pane di iPad](docs/demo/ipad-two-pane.png) | ![Hasil search dengan chip sort di iPad](docs/demo/ipad-search.png) | ![Headlines di iPhone](docs/demo/iphone-single-screen.png) |
+
+Tentang gambar-gambar ini:
+
+- Diambil dalam **mode demo**, jadi judul beritanya fiktif dan fotonya gambar stok. Tidak ada konten NewsAPI yang ditampilkan.
+- Gambar Duo berasal dari **simulator iPhone Duo** yang asli (layar luar, runtime iOS 27.1, dibangun dengan SDK 27.2).
+- **Layar dalam tidak bisa dibuka** di simulator (lihat [persiapan alat](#1-persiapan-alat)), jadi frame dua pane berasal dari iPad Pro 13", yang berlebar regular dan melewati kode layout yang sama.
+- Untuk mereproduksi: jalankan app tanpa key (atau `NEWS_API_KEY=YOUR_NEWSAPI_KEY`).
 
 ---
 

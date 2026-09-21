@@ -12,13 +12,39 @@ A SwiftUI news app for **iPhone Duo** (it also runs on regular iPhones and iPads
 
 **Contents**
 
-1. [Quick start](#quick-start)
-2. [How the app tells Duo mode from single screen](#how-the-app-tells-duo-mode-from-single-screen)
-3. [Guide: developing for iPhone Duo](#guide-developing-for-iphone-duo)
-4. [Features and how they work](#features-and-how-they-work)
-5. [Architecture, NewsAPI limits, and tests](#architecture)
+1. [Demo](#demo)
+2. [Quick start](#quick-start)
+3. [How the app tells Duo mode from single screen](#how-the-app-tells-duo-mode-from-single-screen)
+4. [Guide: developing for iPhone Duo](#guide-developing-for-iphone-duo)
+5. [Features and how they work](#features-and-how-they-work)
+6. [Architecture, NewsAPI limits, and tests](#architecture)
 
 Other document: [docs/STRATEGY.md](docs/STRATEGY.md) explains the reasoning behind the architecture decisions (in Indonesian).
+
+---
+
+## Demo
+
+![Briefly on the iPhone Duo simulator's outer display: browse, open, save, and pick a country](docs/demo/demo-duo-outer.gif)
+
+*The iPhone Duo simulator's outer display: Top Headlines → open an article → save it (❤︎) → back to the list → Saved tab → country picker. The vertical bar on the right carries the tab bar and the toolbar.*
+
+![One view hierarchy on three displays: Duo outer display, iPad, iPhone](docs/demo/overview.png)
+
+| Duo outer display: headlines | Duo outer display: article | Duo outer display: country picker |
+|:---:|:---:|:---:|
+| ![Headlines on Duo's outer display](docs/demo/duo-outer-headlines.png) | ![Article on Duo's outer display](docs/demo/duo-outer-detail.png) | ![Country picker on Duo's outer display](docs/demo/duo-outer-country.png) |
+
+| iPad Pro 13": two panes | iPad Pro 13": search + sort | iPhone: single screen |
+|:---:|:---:|:---:|
+| ![Two-pane list and detail on iPad](docs/demo/ipad-two-pane.png) | ![Search results with sort chips on iPad](docs/demo/ipad-search.png) | ![Headlines on iPhone](docs/demo/iphone-single-screen.png) |
+
+About these images:
+
+- They were captured in **demo mode**, so the headlines are fictional and the photos are stock images. No NewsAPI content is shown.
+- The Duo images are the real **iPhone Duo simulator** (outer display, iOS 27.1 runtime, built with SDK 27.2).
+- The **inner display could not be opened** in the simulator (see [Tooling](#1-tooling)), so the two-pane frames come from an iPad Pro 13", which has a regular-width display and goes through the same layout code.
+- To reproduce: run the app with no key configured (or `NEWS_API_KEY=YOUR_NEWSAPI_KEY`).
 
 ---
 
